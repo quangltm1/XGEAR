@@ -1,31 +1,364 @@
-﻿@{
-    ViewBag.Title = "Home Page";
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="slide-show">
+    <img class="img-slide" height="313" width="1000" src="~/Content/img/Halloween.jpg" alt="">
+    <img class="img-slide" height="313" width="1000" src="~/Content/img/img2.jpg" alt="">
+    <img class="img-slide" height="313" width="1000" src="~/Content/img/img3.jpg" alt="">
+    <img class="img-slide" height="313" width="1000" src="~/Content/img/img4.jpg" alt="">
+    <img class="img-slide" height="313" width="1000" src="~/Content/img/img5.jpg" alt="">
+    <img class="img-slide" height="313" width="1000" src="~/Content/img/img6.jpg" alt="">
+    <div class="move-img-left ti-angle-left" onclick="plusDivs(-1)"></div>
+    <div class="move-img-right ti-angle-right" onclick="plusDivs(1)"></div>
+    <div class="xgear-circles">
+        <span class="xgear-badge demo xgear-grey xgear-hover-white" onclick="currentDiv(1)"></span>
+        <span class="xgear-badge demo xgear-grey xgear-hover-white" onclick="currentDiv(2)"></span>
+        <span class="xgear-badge demo xgear-grey xgear-hover-white" onclick="currentDiv(3)"></span>
+        <span class="xgear-badge demo xgear-grey xgear-hover-white" onclick="currentDiv(4)"></span>
+        <span class="xgear-badge demo xgear-grey xgear-hover-white" onclick="currentDiv(5)"></span>
+        <span class="xgear-badge demo xgear-grey xgear-hover-white" onclick="currentDiv(6)"></span>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+
+<div id="content">
+
+    <div class="img-adv-top">
+        <img class="img-adv" src="~/Content/img/AcerStore.jpg" alt="">
+        <img class="img-adv" src="~/Content/img/ROGStore.jpg" alt="">
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="img-adv-bottom">
+        <img class="img-adv mt30" src="~/Content/img/Lenovo-Store.jpg" alt="">
+        <img class="img-adv mt30" src="~/Content/img/MSI-Store.jpg" alt="">
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+
+    <div class="gears">
+        <div class="xgear-v4">
+            <a href="#">
+                <img class="img-gears mt30 ml58" src="~/Content/img/PC-Gaming-v4.jpg" alt="">
+            </a>
+        </div>
+        <div class="xgear-v4">
+            <a href="#">
+                <img class="img-gears mt30" src="~/Content/img/Man-hinh-v4.jpg" alt="">
+            </a>
+        </div>
+        <div class="xgear-v4">
+            <a href="#">
+                <img class="img-gears mt30" src="~/Content/img/Gaming-Gear-v5.jpg" alt="">
+            </a>
+        </div>
+    </div>
+
+    <div class="best-seller">
+        <span class="line-white-left"></span>
+        <h4 class="text-best-seller">LAPTOP GAMING BEST - SELLER</h4>
+        <span class="line-white-right"></span>
+    </div>
+
+    <div class="slide-best-seller">
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/laptop-msi-bravo.jpg" alt="">
+                    <p class="text-info">Laptop Gaming MSI Bravo 15 B5DD 276VN Radeon RX5500M Ryzen 5 5600H 8GB...</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">22,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">15,490,000đ</span>
+                        <span class="percent">-31%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/AsusROG.jpg" alt="">
+                    <p class="text-info">Laptop Gaming Asus ROG Strix G15 G513IH-HN015W Geforce GTX 1650...</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">23,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">18,690,000đ</span>
+                        <span class="percent">-20%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/Ideapad.jpg" alt="">
+                    <p class="text-info">Laptop Lenovo Ideapad Gaming 3 15ACH6 (82K2010GVN) RTX 3050Ti...</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">25,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">19,990,000đ</span>
+                        <span class="percent">-22%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/Acer-Nitro5.jpg" alt="">
+                    <p class="text-info">Laptop Gaming Acer Nitro 5 Eagle AN515-57-54MV Geforce RTX 3050...</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">26,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">21,490,000đ</span>
+                        <span class="percent">-20%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="best-seller">
+        <span class="line-white-left"></span>
+        <h4 class="text-best-seller">PC GAMING BEST - SELLER</h4>
+        <span class="line-white-right"></span>
+    </div>
+
+    <div class="slide-best-seller">
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/PC-Gaming-best-seller.jpg" alt="">
+                    <p class="text-info">PC Xgear Fi3 Core i3-12100F 8GB GTX 1650 4GB 128GB SSD</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">13,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">10,990,000đ</span>
+                        <span class="percent">-19%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/PC-Gaming-best-seller.jpg" alt="">
+                    <p class="text-info">PC Xgear Fi5 Core i5-12400F 16GB GTX 1650 250GB SSD</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">15,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">13,990,000đ</span>
+                        <span class="percent">-10%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/PC-Gaming-best-seller.jpg" alt="">
+                    <p class="text-info">PC Xgear Fi3 Core i3-12100F 8GB RTX 2060 128GB SSD</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">15,990,000 đ</span>
+                        </del>
+                        <span class="promotional-price">13,990,000đ</span>
+                        <span class="percent">-13%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/PC-Gaming-best-seller.jpg" alt="">
+                    <p class="text-info">PC Xgear Fi5 Intel i5-12400F 16GB RTX 3060 12G 250GB SSD Nvme</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">23,990,000 đ</span>
+                        </del>
+                        <span class="promotional-price">19,990,000đ</span>
+                        <span class="percent">-17%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <div class="best-seller">
+        <span class="line-white-left"></span>
+        <h4 class="text-best-seller">Màn Hình Gaming</h4>
+        <span class="line-white-right"></span>
+    </div>
+
+
+    <div class="slide-best-seller">
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/manhinhmsi.jpg" alt="">
+                    <p class="text-info">Màn hình cong MSI Optix G241VC (24"/ VA/ FullHD/ 75Hz/ 1ms/ 115%sRGB)</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">3,990,000 đ</span>
+                        </del>
+                        <span class="promotional-price">3,290,000đ</span>
+                        <span class="percent">-18%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/manhinhphilip.jpg" alt="">
+                    <p class="text-info">Màn hình Gaming Philips 242M8/74 (24"/ IPS/ 144Hz/ 1ms/ 127% sRGB)</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">5,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">3,790,000đ</span>
+                        <span class="percent">-31%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/manhinhgigabyte.png" alt="">
+                    <p class="text-info">Màn hình Gaming Gigabyte G24F-EK (24"/ IPS/ Full HD/ 170Hz/ 1ms MPRT)</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">4,990,000 đ</span>
+                        </del>
+                        <span class="promotional-price">3,890,000đ</span>
+                        <span class="percent">-22%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/manhinhtuf.jpg" alt="">
+                    <p class="text-info">Màn Hình ASUS TUF Gaming VG247Q1A (24"/ Full HD/ VA/ 1ms MPRT/ 165Hz)</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">5,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">3,990,000đ</span>
+                        <span class="percent">-27%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="best-seller">
+        <span class="line-white-left"></span>
+        <h4 class="text-best-seller">Gaming Gears</h4>
+        <span class="line-white-right"></span>
+    </div>
+
+    <div class="slide-best-seller">
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/chuotHavit.png" alt="">
+                    <p class="text-info">Chuột gaming HAVIT MS1003</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">240,000 đ</span>
+                        </del>
+                        <span class="promotional-price">140,000đ</span>
+                        <span class="percent">-42%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/chuottuf.png" alt="">
+                    <p class="text-info">Chuột gaming Asus TUF M3</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">550,000 đ</span>
+                        </del>
+                        <span class="promotional-price">390,000đ</span>
+                        <span class="percent">-29%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/chuotrazer.png" alt="">
+                    <p class="text-info">Chuột Razer DeathAdder Essential </p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">750,000 đ</span>
+                        </del>
+                        <span class="promotional-price">490,000đ</span>
+                        <span class="percent">-35%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
+        <div class="info-best-seller">
+            <div class="laptop-best-seller">
+                <a href="">
+                    <span class="sale-off">Sale!</span>
+                    <img width="280" height="210" src="~/Content/img/tainghenhorazer.png" alt="">
+                    <p class="text-info">Tai nghe Razer Hammerhead Pro</p>
+                    <span class="price">
+                        <del aria-hidden="true">
+                            <span class="cost">1,490,000 đ</span>
+                        </del>
+                        <span class="promotional-price">750,000đ</span>
+                        <span class="percent">-50%</span>
+                    </span>
+                    <button class="buy-now">Mua ngay</button>
+                </a>
+            </div>
+        </div>
     </div>
 </div>
+

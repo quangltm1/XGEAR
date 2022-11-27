@@ -7,3 +7,4 @@
         reader.readAsDataURL(UploadImage.files[0]);
     }
 }
+

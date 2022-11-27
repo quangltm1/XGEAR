@@ -1,0 +1,43 @@
+﻿@model XGEAR.Models.AdminUser
+
+@{
+    ViewBag.Title = "RegisterUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    .field-validation-error {
+        color: red;
+    }
+    
+</style>
+<h2 style="margin-top:200px;margin-left:20px;">Đăng Ký</h2>
+@using (Html.BeginForm("RegisterUser", "LoginUser", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <p style="margin-left: 20px;">@Html.LabelFor(model => model.ID)</p>
+    <p style="margin-left: 20px;">@Html.EditorFor(model => model.ID)</p>
+    <p style="margin-left: 20px;">
+        @Html.ValidationMessageFor(model => model.ID)
+    </p>
+    if (ViewBag.ErrorRegister != null)
+    {
+        <p style="margin-left: 20px;">@ViewBag.ErrorRegister</p>
+    }
+    <p style="margin-left: 20px;">@Html.LabelFor(model => model.NameUser)</p>
+    <p style="margin-left: 20px;">@Html.EditorFor(model => model.NameUser)</p>
+    <p style="margin-left: 20px;">@Html.ValidationMessageFor(model => model.NameUser)</p>
+
+    <p style="margin-left: 20px;">@Html.LabelFor(model => model.RoleUser)</p>
+    <p style="margin-left: 20px;">@Html.EditorFor(model => model.RoleUser)</p>
+    <p style="margin-left: 20px;">@Html.ValidationMessageFor(model => model.RoleUser)</p>
+
+    <p style="margin-left: 20px;">@Html.LabelFor(model => model.PasswordUser)</p>
+    <p style="margin-left: 20px;">@Html.EditorFor(model => model.PasswordUser)</p>
+    <p style="margin-left: 20px;">@Html.ValidationMessageFor(model => model.PasswordUser)</p>
+
+    <p style="margin-left: 20px;">@Html.LabelFor(model => model.ConfirmPass)</p>
+    <p style="margin-left: 20px;">@Html.EditorFor(model => model.ConfirmPass)</p>
+    <p style="margin-left: 20px;">@Html.ValidationMessageFor(model => model.ConfirmPass)</p>
+    <input type="submit" style="margin-left: 20px;" value="Tạo" />
+}

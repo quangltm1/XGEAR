@@ -143,9 +143,18 @@ html {
     line-height: 80px;
     cursor: pointer;
     transform: translateY(5px);
-    max-width: 216px;
+    max-width: 280px;
     margin-right: 10px;
+    
 }
+
+    .user-section a {
+        font-size: 8px;
+        color: white;
+        padding:0 2px;
+    }
+
+
 
 #nav {
     height: 68px;
@@ -633,3 +642,14 @@ nav .subnav > a {
             color: #fff;
             transition: 0.5s ease-in-out;
         }
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+
+.user-login {
+    list-style: none;
+    flex: auto;
+}

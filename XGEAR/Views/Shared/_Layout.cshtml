@@ -8,19 +8,20 @@
     <link rel="stylesheet" href="./style.css">
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/themify-icons-font/themify-icons/themify-icons.css">
+    @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    @RenderBody();
+
     <div id="main">
         <div id="header">
             <div class="top-head">
                 <div class="CRlogo">
-                    <a href="#">
+                    <a href="/Home/Index">
                         <img class="logo-xgear" width="675" heigth="322" src="~/Content/img/Xgear-logo.png" alt="">
                     </a>
                 </div>
                 <div class="section-input">
-                    <input id="input-header" type="text" name="keyword" placeholder="Bạn cần tìm sản phẩm nào?">
+                    <input id="input-header" onkeyup="myFuntion()" type="text" name="keyword" placeholder="Bạn cần tìm sản phẩm nào?">
                 </div>
                 <div id="search-btn">
                     <i class="search-icon ti-search"></i>
@@ -28,15 +29,27 @@
             </div>
             <div class="user-header">
                 <div class="check-items">
-                    <button class="check-btn">
-                        Kiểm tra đơn hàng
-                    </button>
                     <div class="user-section">
-                        <i class="mlr8 btn-user ti-user"></i>
-                        <i class="mlr8 btn-user ti-shopping-cart"></i>
+                        <a href="/LoginUser/RegisterUser" style="font-size: 14px; margin-top: 2px; text-decoration: none;"> Đăng Ký </a>
+                        <a href="/LoginUser/Index" style="font-size: 14px; margin-top: 2px; text-decoration: none; "> Đăng Nhập </a>
+                        <a href="@Url.Action("LogoutUser","LoginUser")" style="margin-top: 2px; font-size: 14px; text-decoration: none;">Đăng Xuất </a>
+
+                        <a href="/ShoppingCart/ShowCart" style="text-decoration:none;"><i class="mlr8 btn-user ti-shopping-cart"></i></a>
+                        <a style="padding-top:15px; color:white;">
+                            @if (Session["NameUser"] == null)
+                            {
+                                <span>Hello</span>
+                            }
+                            else
+                            {
+                                <span> <text> Hello </text> @Session["NameUser"] </span>
+                            }
+
+                        </a>
                     </div>
                 </div>
             </div>
+            
             <div id="nav">
                 <ul>
                     <li class="nav-header">
@@ -516,7 +529,9 @@
                 </ul>
             </div>
         </div>
-
+        <div id="content">
+            @RenderBody();
+        </div>
         <div class="mb50"></div>
         <div id="footer">
             <div class="footer-top">
@@ -602,7 +617,54 @@
             </div>
         </div>
     </div>
+    <script>
+        var slideIndex = 1;
+        showDivs(slideIndex);
 
+        function plusDivs(n) {
+          showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+          showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+          var i;
+          var x = document.getElementsByClassName("img-slide");
+          var dots = document.getElementsByClassName("demo");
+          if (n > x.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = x.length}
+          for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" xgear-black", "");
+          }
+          x[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " xgear-black";
+        }
+
+        function myFunction() {
+            // Declare variables
+            var input, filter, ul, li, a, i, txtValue;
+            input = document.getElementById('myInput');
+            filter = input.value.toUpperCase();
+            ul = document.getElementById("myUL");
+            li = ul.getElementsByTagName('li');
+
+            // Loop through all list items, and hide those who don't match the search query
+            for (i = 0; i < li.length; i++) {
+                a = li[i].getElementsByTagName("a")[0];
+                txtValue = a.textContent || a.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                } else {
+                    li[i].style.display = "none";
+                }
+            }
+        }
+    </script>
 
 </body>
 </html>

@@ -1,0 +1,38 @@
+﻿@model XGEAR.Models.AdminUser
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .field-validation-error {
+        color: red;
+    }
+</style>
+
+<h2 style="margin-top:200px; margin-left:20px">Đăng Nhập</h2> 
+@using (Html.BeginForm("LoginAcount", "LoginUser"))
+{
+    @Html.AntiForgeryToken()
+    <table style="margin-left:20px;">
+        <tr>
+            <td>@Html.LabelFor(model => model.NameUser)</td>
+            <td>@Html.TextBoxFor(model => model.NameUser, new { style = "feild-validation-error" })</td>
+            <td>@Html.ValidationMessageFor(model => model.NameUser)</td>
+        </tr>
+        <tr>
+            <td>@Html.LabelFor(model => model.PasswordUser)</td>
+            <td>@Html.EditorFor(model => model.PasswordUser)</td>
+            <td>@Html.ValidationMessageFor(model => model.PasswordUser)</td>
+            @if (ViewBag.ErrorInfo == null)
+            {
+                @ViewBag.ErrorInfo
+            }
+
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="Login" /></td>
+        </tr>
+    </table>
+}

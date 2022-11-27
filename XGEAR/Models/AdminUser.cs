@@ -20,7 +20,7 @@ namespace XGEAR.Models
         public int ID { get; set; }
         [Required(ErrorMessage = "Name not empty...")]
         [StringLength(50, MinimumLength = 5)]
-        [Display(Name = "Tên User")]
+        [Display(Name = "Tên Đăng Nhập")]
         public string NameUser { get; set; }
         [Display(Name = "Vị trí")]
 

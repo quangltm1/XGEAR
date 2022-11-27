@@ -15,7 +15,7 @@ namespace XGEAR.Controllers
         public ActionResult Index()
         {
             return View();
-        }
+        }   
 
         [HttpPost]
         public ActionResult LoginAcount(AdminUser _user)
@@ -31,7 +31,7 @@ namespace XGEAR.Controllers
                 database.Configuration.ValidateOnSaveEnabled = false;
                 Session["NameUser"] = _user.NameUser;
                 Session["PasswordUser"] = _user.PasswordUser;
-                return RedirectToAction("Index", "Product");
+                return RedirectToAction("Index", "Home");
             }
         }
 
