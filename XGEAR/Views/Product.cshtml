@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Bai5.Models.Product>
+
+@{
+    ViewBag.Title = "Product";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Product</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreatePro")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NamePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DecriptionPro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Price)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImagePro)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Category1.NameCate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NamePro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DecriptionPro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ImagePro)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Category1.NameCate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditPro", new { id=item.ProductID }) |
+            @Html.ActionLink("Details", "DetailsPro", new { id=item.ProductID }) |
+            @Html.ActionLink("Delete", "DeletePro", new { id=item.ProductID })
+        </td>
+    </tr>
+}
+
+</table>

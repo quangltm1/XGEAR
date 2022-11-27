@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Bai5.Models.Category>
+
+@{
+    ViewBag.Title = "Category";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>Quản Lý Danh Mục Sản Phẩm</h2>
+
+<p>
+    @Html.ActionLink("Create", "CreateCate")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDCate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NameCate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDCate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NameCate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "EditCate", new { id=item.Id }) |
+            @Html.ActionLink("Details", "DetailsCate", new { id=item.Id }) |
+            @Html.ActionLink("Delete", "DeleteCate", new { id=item.Id })
+        </td>
+    </tr>
+}
+
+</table>
