@@ -15,7 +15,6 @@ namespace XGEAR.Controllers
     public class HomeController : Controller
     {
 
-
         [NotMapped]
         public HttpPostedFileBase UploadImage { get; set; }
         public string ImagePro { get; private set; }
@@ -23,6 +22,7 @@ namespace XGEAR.Controllers
         XgearEntities database = new XgearEntities();
 
         // GET: Product
+        
 
         public ActionResult SearchOption(double min = double.MinValue, double max = double.MaxValue)
         {
@@ -83,6 +83,11 @@ namespace XGEAR.Controllers
             Category se_cate = new Category();
             se_cate.ListCate = database.Categories.ToList<Category>();
             return PartialView(se_cate);
+        }
+
+        public ActionResult ProductDetailsLayout()
+        {
+            return View();
         }
     }
 }

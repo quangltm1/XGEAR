@@ -69,7 +69,7 @@ namespace XGEAR.Controllers
                 ViewBag.listCategory = new SelectList(list, "IDCate", "NameCate", 1);
                 database.Products.Add(pro);
                 database.SaveChanges();
-                return RedirectToAction("IndexProductAdmin");
+                return RedirectToAction("Index");
             }
             catch
             {
@@ -97,7 +97,7 @@ namespace XGEAR.Controllers
                 pro = database.Products.Where(s => s.ProductID == id).FirstOrDefault();
                 database.Products.Remove(pro);
                 database.SaveChanges();
-                return RedirectToAction("IndexProductAdmin");
+                return RedirectToAction("Index");
             }
 
             catch
@@ -116,15 +116,12 @@ namespace XGEAR.Controllers
         {
             database.Entry(pro).State = System.Data.Entity.EntityState.Modified;
             database.SaveChanges();
-            return RedirectToAction("IndexProductAdmin");
+            return RedirectToAction("Index");
         }
 
-        public ActionResult IndexProductAdmin(string _name)
+        public ActionResult ProductDetailsLayout()
         {
-            if (_name == null)
-                return View(database.Products.ToList());
-            else
-                return View(database.Products.Where(s => s.NamePro.Contains(_name)).ToList());
+            return View();
         }
     }
 }

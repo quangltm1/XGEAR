@@ -14,7 +14,7 @@ namespace XGEAR.Models
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-
+    
     public partial class AdminUser
     {
         public int ID { get; set; }
