@@ -69,7 +69,7 @@ namespace XGEAR.Controllers
                 ViewBag.listCategory = new SelectList(list, "IDCate", "NameCate", 1);
                 database.Products.Add(pro);
                 database.SaveChanges();
-                return RedirectToAction("IndexProductAdmin"); 
+                return RedirectToAction("IndexProductAdmin");
             }
             catch
             {
