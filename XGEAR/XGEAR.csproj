@@ -134,6 +134,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoriesController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginUserController.cs" />
@@ -652,6 +653,18 @@
     <Content Include="Views\ShoppingCart\CheckOut_Success.cshtml" />
     <Content Include="Views\ShoppingCart\EmptyCart.cshtml" />
     <Content Include="Views\Product\Details.cshtml" />
+    <Content Include="Views\Admin\Category.cshtml" />
+    <Content Include="Views\Admin\CreateCate.cshtml" />
+    <Content Include="Views\Admin\CreatePro.cshtml" />
+    <Content Include="Views\Admin\DeleteCate.cshtml" />
+    <Content Include="Views\Admin\DeletePro.cshtml" />
+    <Content Include="Views\Admin\DetailsCate.cshtml" />
+    <Content Include="Views\Admin\DetailsPro.cshtml" />
+    <Content Include="Views\Admin\EditCate.cshtml" />
+    <Content Include="Views\Admin\EditPro.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Admin\Login.cshtml" />
+    <Content Include="Views\Admin\Product.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

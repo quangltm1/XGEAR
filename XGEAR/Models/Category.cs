@@ -11,6 +11,7 @@ namespace XGEAR.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using XGEAR.Models;
     
@@ -23,9 +24,13 @@ namespace XGEAR.Models
         }
     
         public int Id { get; set; }
+        [Required(ErrorMessage = "IDCate not empty...")]
+        [StringLength(50, MinimumLength = 3)]
         public string IDCate { get; set; }
+        [Required(ErrorMessage = "Name not empty...")]
+        [StringLength(50, MinimumLength = 5)]
         public string NameCate { get; set; }
-    
+        
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
         [NotMapped]

@@ -14,7 +14,9 @@ namespace XGEAR.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Web;
-    
+    using System.Configuration;
+    using System.ComponentModel.DataAnnotations;
+
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -30,6 +32,8 @@ namespace XGEAR.Models
         public string NamePro { get; set; }
         public string DecriptionPro { get; set; }
         public string Category { get; set; }
+        [Required(ErrorMessage = "Name not empty...")]
+        [Range(0, int.MaxValue, ErrorMessage = "Vui Long nhap so Duong")]
         public Nullable<int> Price { get; set; }
         public string ImagePro { get; set; }
         public Nullable<int> Quantity { get; set; }

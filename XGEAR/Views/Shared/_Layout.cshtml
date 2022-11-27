@@ -44,11 +44,11 @@
                         <a style="padding-top:15px; color:white; font-size:16px;">
                             @if (Session["NameUser"] == null)
                             {
-                                <span>Hello</span>
+                                <span></span>
                             }
                             else
                             {
-                                <span> <text> Hello </text> @Session["NameUser"] </span>
+                                <span> @Session["NameUser"] </span>
                             }
 
                         </a>
