@@ -86,6 +86,11 @@ namespace XGEAR.Controllers
             }
         }
 
+        public ActionResult Laptop()
+        {
+            
+            return View();
+        }
 
     }
 }
