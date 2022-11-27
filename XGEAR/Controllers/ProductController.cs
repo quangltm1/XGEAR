@@ -123,5 +123,13 @@ namespace XGEAR.Controllers
         {
             return View();
         }
+        
+        public ActionResult Details(int id)
+        {
+            var pro = from s in database.Products
+                      where s.ProductID == id
+                      select s;
+            return View(pro.Single());
+        }
     }
 }

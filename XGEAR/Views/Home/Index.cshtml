@@ -65,13 +65,13 @@
                 {
                     <div class="info-best-seller">
                         <div class="laptop-best-seller">
-                            <a href="/Product/ProductDetailsLayout">
+                            <a href="@Url.Action("Details","Product", new {Id = pro.ProductID})">
                                 <img width="280" height="210" src="@Url.Content(pro.ImagePro)" alt="">
                                 <p class="text-info">@Html.DisplayFor(model => pro.NamePro)</p>
                                 <span class="price">
                                     <span class="promotional-price">@Html.DisplayFor(model => pro.Price)</span>
                                 </span>
-                                <a href="/ShoppingCart/AddToCart"><button class="buy-now">Mua ngay</button></a>
+                                <a href="/ShoppingCart/AddToCart/@pro.ProductID"><button class="buy-now">Mua ngay</button></a>
                             </a>
                         </div>
                     </div>

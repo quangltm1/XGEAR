@@ -109,6 +109,7 @@ html {
     float: right;
     display: inline-block;
     line-height: 80px;
+    margin-right:40px;
 }
 
 .user-header {
@@ -119,6 +120,7 @@ html {
 
 .check-items {
     display: inline-block;
+    transform:translateX(-80px);
 }
 
 
@@ -142,9 +144,9 @@ html {
     display: inline-block;
     line-height: 80px;
     cursor: pointer;
-    transform: translateY(5px);
-    max-width: 300px;
-    margin-right: 10px;
+    transform: translateY(-6px);
+    max-width: 350px;
+    margin-right: -50px;
     
 }
 
@@ -982,3 +984,25 @@ nav .subnav > a {
     margin-bottom: 15px;
     font-size: 18px;
 }
+
+
+.btn-buy {
+    color: white;
+    cursor: pointer;
+    position: relative;
+    text-decoration: none;
+    overflow: visible;
+    padding: 0.618em 1em;
+    background-color: #E30000;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    line-height: 1.4;
+    margin: 40px 0 0;
+}
+
+    .btn-buy:hover {
+        background-color: white;
+        color: #E30000;
+        border: 1px solid #E30000;
+    }

@@ -185,6 +185,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\img\276VN-1-900x900-1.jpg" />
     <Content Include="Content\img\Acer-Nitro5.jpg" />
     <Content Include="Content\img\AcerStore.jpg" />
     <Content Include="Content\img\AsusROG.jpg" />
@@ -217,6 +218,12 @@
     <Content Include="Content\img\MSI-Store.jpg" />
     <Content Include="Content\img\PC-Gaming-best-seller.jpg" />
     <Content Include="Content\img\PC-Gaming-v4.jpg" />
+    <Content Include="Content\img\photo1.jpg" />
+    <Content Include="Content\img\photo2.jpg" />
+    <Content Include="Content\img\photo3.jpg" />
+    <Content Include="Content\img\photo4.jpg" />
+    <Content Include="Content\img\photo5.jpg" />
+    <Content Include="Content\img\photo6.jpg" />
     <Content Include="Content\img\ROGStore.jpg" />
     <Content Include="Content\img\tainghenhorazer.png" />
     <Content Include="Content\img\viettelpay.png" />
@@ -640,8 +647,12 @@
     <Content Include="Views\LoginUser\RegisterUser.cshtml" />
     <Content Include="Views\Product\SearchOption.cshtml" />
     <Content Include="Views\Product\Index.cshtml" />
-    <Content Include="Views\Product\ProductDetails.cshtml" />
-    <Content Include="Views\Shared\ProductDetailsLayout.cshtml" />
+    <Content Include="Views\ShoppingCart\ShowCart.cshtml" />
+    <Content Include="Views\ShoppingCart\BagCart.cshtml" />
+    <Content Include="Views\ShoppingCart\CheckOut_Success.cshtml" />
+    <Content Include="Views\ShoppingCart\EmptyCart.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

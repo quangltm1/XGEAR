@@ -1,0 +1,200 @@
+﻿@model XGEAR.Models.Product
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<h2>Thong tin san pham</h2>
+<img width="280" height="210" src="@Model.ImagePro" alt="">
+<h3>Ten: @Model.NamePro    </h3>
+<h4>Chi tiet: @Model.DecriptionPro</h4>
+<h5>Gia: @Model.Price</h5>
+<a href="@Url.Action("AddToCart","ShoppingCart", new {id = Model.ProductID})">dit me may</a>*@
+
+<div id="main">
+
+    <div id="content">
+        <div id="content">
+            <div class="text-content">
+                <h1>@Model.NamePro</h1>
+                <div class="stock-status">
+                    <a href="">Còn hàng</a>
+                </div>
+            </div>
+            <div class="product">
+                <div class="product-info">
+                    <img width="350" height="350" class="img-product" src="@Model.ImagePro" alt="">
+                </div>
+                <div class="product-info">
+                    <div class="box-cost">
+                        <div class="box-1">
+                            <div class="main-price">
+                                <p>Mua ngay</p>
+                                <div class="wrap-price">
+                                    <span>@Model.Price đ</span>
+                                </div>
+                            </div>
+                            <div class="or">
+                                <p>Hoặc</p>
+                            </div>
+                            <div class="prepay-price">
+                                <p>Trả trước từ</p>
+                                <div class="wrap-price">
+                                    <span>1,749,000 đ</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-2">
+                        <div class="wrap">
+                            <p>Khuyến mãi</p>
+                            <div class="cont">
+                                <p>
+                                    <span class="black-friday">
+                                        * Giá Black Friday chỉ 15.490.000đ. Số lượng: 3 chiếc *
+                                    </span>
+                                    <b class="ap-dung">
+                                        (áp dụng đến hết 25/11)
+                                    </b> <br>
+                                    <b class="mt8">Nhận chim nhồi bông đến 30/11 (hoặc hết quà).</b>
+                                    <ul class="upgrade-list mt8">
+                                        <li>♦ Nâng cấp lên <b>16GB Ram </b>chỉ <b class="red">490.000đ</b></li>
+                                        <li>♦ Balo <b>MSI</b></li>
+                                        <li>♦ Chuột <b>Gaming MSI</b></li>
+                                        <li>♦ Túi chống sốc</li>
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="box-2">
+                        <div class="wrap">
+                            <div class="hot-line">
+                                <i class="telephone-icon ti-mobile red"></i>
+                                <a href="tel:++842871081881">
+                                    Hotline: <br>
+                                    <b>(028) 7108 1881</b>
+                                </a>
+                            </div>
+                            <div class="cont">
+                                <p>» Miễn phí giao hàng toàn quốc (không áp dụng LCD)</p>
+                                <p>» Giao nhanh 2h chỉ 20k( nội thành HCM - HN)</p>
+                            </div>
+                            <div class="charge-card">
+                                <p class="cont">Miễn phí charge thẻ</p>
+                                <div class="card-list">
+                                    <img class="mr20" width="32" height="32" src="~/Content/img/visa.png" alt="">
+                                    <img class="mr20" width="32" height="32" src="~/Content/img/mastercard.png" alt="">
+                                    <img class="mr20" width="32" height="32" src="~/Content/img/atm.png" alt="">
+                                </div>
+                            </div>
+
+                        </div>
+                        <div>
+
+                            <a href="@Url.Action("AddToCart","ShoppingCart", new {id = Model.ProductID})" />
+                            <button type="submit" class="btn-buy">
+                                <b>ĐẶT NGAY</b><br />
+                                Giao hàng tận nơi hoặc nhận tại cửa hàng
+                            </button>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="product-detail">
+                <div class="container">
+                    <div class="row">
+                        <div class="product-center">
+                            <div class="box-left">
+                                <h4 class="title">Thông số kỹ thuật</h4>
+                                <ul>
+                                    <li>
+                                        <p class="feature-title">CPU</p>
+                                        <p class="feature-title">
+                                            AMD Ryzen 5 5600H
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Card đồ họa</p>
+                                        <p class="feature-title">Radeon RX5500M 4GB</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Bộ nhớ RAM</p>
+                                        <p class="feature-title">DDR4 8GB (1 x 8GB) 3200MHz; 2 slots, up to 32GB</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Ổ cứng SSD</p>
+                                        <p class="feature-title">512GB SSD NVMe M.2 PCIe Gen 3 x 4</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Màn hình</p>
+                                        <p class="feature-title">
+                                            15.6" FullHD (1920 x 1080), 60Hz, IPS Panel
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Hệ điều hành</p>
+                                        <p class="feature-title">Windows 11 SL 64 Bit</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Lan</p>
+                                        <p class="feature-title">Gigabit Lan</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Wireless Lan</p>
+                                        <p class="feature-title">AMD Wi-Fi 6E RZ608</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Cổng kết nối</p>
+                                        <p class="feature-title">1x Type-A USB2.0 1x RJ45 1x (4K  60Hz) HDMI 1x Type-C USB3.2 Gen1 2x Type-A USB3.2 Gen1</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Bàn phím</p>
+                                        <p class="feature-title">
+                                            Backlight Keyboard (Red)
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Pin</p>
+                                        <p class="feature-title">
+                                            3 Cell
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Kích thước</p>
+                                        <p class="feature-title">359 x 254 x 21.7 mm</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Trọng lượng</p>
+                                        <p class="feature-title">2.35 kg</p>
+                                    </li>
+                                    <li>
+                                        <p class="feature-title">Bảo hành</p>
+                                        <p class="feature-title">12 tháng Chính Hãng-</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="box-right">
+                            <div class="small">
+                                <h4 class="title">MÔ TẢ SẢN PHẨM</h4>
+                                <div class="box-text">
+                                    @Model.DecriptionPro
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+

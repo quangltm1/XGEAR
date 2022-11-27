@@ -5,13 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
     <link rel="stylesheet" href="./style.css">
     <link href="~/Content/Site.css" rel="stylesheet" />
     <link rel="stylesheet" href="~/Content/themify-icons-font/themify-icons/themify-icons.css">
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/css")
 </head>
 <body>
 
@@ -25,514 +23,518 @@
                 </div>
                 <ul class="section-input" style="list-style-type:none; line-height:35px;">
                     <li style="margin-left:10px;padding:2px 5px; background: linear-gradient(#c0c0c0,#c0c0c0) padding-box,linear-gradient(95.18deg,#EB67CB 43.94%,#6285F0 91.72%); color: #000; border-radius: 20px; border: 2px solid transparent; ">
-                        <a href="/Product/SearchOption" class="btn btn-default" style="text-decoration:none; color:black;">Search theo giá</a>
+                        <a href="/Product/SearchOption" style="text-decoration:none; color:black;">Search theo giá</a>
                     </li>
                 </ul>
 
-                
+
             </div>
-                <div class="user-header">
-                    <div class="check-items">
-                        <div class="user-section" style="line-height:50px;">
-                            <a href="/LoginUser/RegisterUser" style="font-size: 14px; margin-top: 2px; text-decoration: none;"> Đăng Ký </a>
-                            <a href="/LoginUser/Index" style="font-size: 14px; margin-top: 2px; text-decoration: none; "> Đăng Nhập </a>
-                            <a href="@Url.Action("LogoutUser","LoginUser")" style="margin-top: 2px; font-size: 14px; text-decoration: none;">Đăng Xuất </a>
+            <div class="user-header">
+                <div class="check-items">
+                    <div class="user-section" style="line-height:60px;">
+                        <a href="/LoginUser/RegisterUser" style="font-size: 14px; margin-top: 2px; text-decoration: none;"> Đăng Ký </a>
+                        <a href="/LoginUser/Index" style="font-size: 14px; margin-top: 2px; text-decoration: none; "> Đăng Nhập </a>
+                        <a href="@Url.Action("LogoutUser","LoginUser")" style="margin-top: 2px; font-size: 14px; text-decoration: none;">Đăng Xuất </a>
+                                <span>
+                                    <a href="/ShoppingCart/ShowCart" style="text-decoration:none;">
+                                    <span class="mlr8 btn-user ti-shopping-cart"></span>
+                                    </a>
+                                </span>
+                                @Html.Action("BagCart", "ShoppingCart")
+                        <a style="padding-top:15px; color:white; font-size:16px;">
+                            @if (Session["NameUser"] == null)
+                            {
+                                <span>Hello</span>
+                            }
+                            else
+                            {
+                                <span> <text> Hello </text> @Session["NameUser"] </span>
+                            }
 
-                            <a href="/ShoppingCart/ShowCart" style="text-decoration:none;"><i class="mlr8 btn-user ti-shopping-cart"></i></a>
-                            <a style="padding-top:15px; color:white;">
-                                @if (Session["NameUser"] == null)
-                                {
-                                    <span>Hello</span>
-                                }
-                                else
-                                {
-                                    <span> <text> Hello </text> @Session["NameUser"] </span>
-                                }
-
-                            </a>
-                        </div>
+                        </a>
                     </div>
                 </div>
-
-                <div id="nav">
-                    <ul>
-                        <li class="nav-header">
-                            <a href="">
-                                Laptop
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li>
-                                    <a href="">
-                                        Laptop Acer
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Aspire 7</a></li>
-                                        <li><a href="">Nitro 5</a></li>
-                                        <li><a href="">Helios</a></li>
-                                        <li><a href="">Triton</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Laptop Asus
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Laptop Asus văn phòng - đồ họa</a></li>
-                                        <li><a href="">TUF Series</a></li>
-                                        <li>
-                                            <a href="">
-                                                ROG Series
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">Strix</a></li>
-                                                <li><a href="">Zephyrus</a></li>
-                                                <li><a href="">Flow</a></li>
-                                                <li><a href="">Scar</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Laptop Lenovo
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Lenovo Văn phòng - Đồ họa</a></li>
-                                        <li><a href="">Ideapad Gaming</a></li>
-                                        <li><a href="">Legion Gaming</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Laptop MSI
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">MSI văn phòng - Đồ hoạ</a></li>
-                                        <li>
-                                            <a href="">
-                                                Gaming AMD Series
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">Bravo</a></li>
-                                                <li><a href="">Alpha</a></li>
-                                                <li><a href="">Delta</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                Gaming Intel Series
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">GF</a></li>
-                                                <li><a href="">GL</a></li>
-                                                <li><a href="">GP</a></li>
-                                                <li><a href="">GE</a></li>
-                                                <li><a href="">GS</a></li>
-                                                <li><a href="">GT</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li><a href="">Laptop HP</a></li>
-                                <li>
-                                    <a href="">
-                                        Laptop Dell
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Dell Văn phòng</a></li>
-                                        <li><a href="">Dell Gaming -Đồ họa</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-header">
-                            <a href="">
-                                XGEAR PC
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li>
-                                    <a href="">
-                                        Xgear PC
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav1">
-                                        <li><a href="">PC Gaming</a></li>
-                                        <li><a href="">PC Đồ Họa</a></li>
-                                        <li><a href="">PC Văn Phòng</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="">Mini PC</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-header">
-                            <a href="">
-                                Màn hình
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li>
-                                    <a href="">
-                                        Màn hình theo hãng
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav1">
-                                        <li><a href="">Màn Hình Asus</a></li>
-                                        <li><a href="">Màn Hình Acer</a></li>
-                                        <li><a href="">Màn Hình Gigabyte</a></li>
-                                        <li><a href="">Màn Hình MSI</a></li>
-                                        <li><a href="">Màn Hình Dell</a></li>
-                                        <li><a href="">Màn Hình Phillips</a></li>
-                                        <li><a href="">Màn Hình Samsung</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="">Màn hình Gaming</a></li>
-                                <li><a href="">Màn hình đồ họa</a></li>
-                            </ul>
-
-                        </li>
-
-                        <li class="nav-header">
-                            <a href="">
-                                Linh Kiện
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li>
-                                    <a href="">
-                                        CPU
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">CPU AMD</a></li>
-                                        <li><a href="">CPU Intel</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Mainboard
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li>
-                                            <a href="">
-                                                Main Asus
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">Mainboard Asus Intel</a></li>
-                                                <li><a href="">Mainboard Asus AMD</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                Main Gigabyte
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">Mainboard Gigabyte Intel</a></li>
-                                                <li><a href="">Mainboard Gigabyte AMD</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                Main MSI
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">Mainboard MSI Intel</a></li>
-                                                <li><a href="">Mainboard MSI AMD</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        RAM
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li>
-                                            <a href="">
-                                                RAM PC
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">RAM TeamGroup</a></li>
-                                                <li><a href="">RAM Corsair</a></li>
-                                                <li><a href="">RAM Kingston</a></li>
-                                                <li><a href="">RAM Gigabyte</a></li>
-                                                <li><a href="">RAM GSkill</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="">Ram Laptop</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        VGA
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li>
-                                            <a href="">
-                                                VGA Asus
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">VGA Asus RTX 4000</a></li>
-                                                <li><a href="">VGA Asus GTX</a></li>
-                                                <li><a href="">VGA Asus RTX 2060</a></li>
-                                                <li><a href="">VGA Asus RTX 3060 - 3060Ti</a></li>
-                                                <li><a href="">VGA Asus RTX 3070 - 3070Ti</a></li>
-                                                <li><a href="">VGA Asus RTX 3080 - 3080Ti</a></li>
-                                                <li><a href="">VGA Asus RTX 3090 - 3090Ti</a></li>
-                                                <li><a href="">VGA Asus Radeon RX</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                VGA Gigabyte
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">VGA Gigabyte RTX 4000</a></li>
-                                                <li><a href="">VGA Gigabyte GTX</a></li>
-                                                <li><a href="">VGA Gigabyte RTX 2060</a></li>
-                                                <li><a href="">VGA Gigabyte RTX 3060 - 3060Ti</a></li>
-                                                <li><a href="">VGA Gigabyte RTX 3070 - 3070Ti</a></li>
-                                                <li><a href="">VGA Gigabyte RTX 3080 - 3080Ti</a></li>
-                                                <li><a href="">VGA Gigabyte RTX 3090 - 3090Ti</a></li>
-                                                <li><a href="">VGA Gigabyte AMD Radeon</a></li>
-                                            </ul>
-                                        </li>
-                                        <li>
-                                            <a href="">
-                                                VGA MSI
-                                                <i class="btn-right ti-angle-right"></i>
-                                            </a>
-                                            <ul class="sub-subnav1">
-                                                <li><a href="">VGA MSI RTX 4000</a></li>
-                                                <li><a href="">VGA MSI GTX</a></li>
-                                                <li><a href="">VGA MSI RTX 2060</a></li>
-                                                <li><a href="">VGA MSI RTX 3060 - 3060Ti</a></li>
-                                                <li><a href="">VGA MSI RTX 3070 - 3070Ti</a></li>
-                                                <li><a href="">VGA MSI RTX 3080 - 3080Ti</a></li>
-                                                <li><a href="">VGA MSI RTX 3090 - 3090Ti</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        SSD
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">SSD 120GB - 128GB</a></li>
-                                        <li><a href="">SSD 240GB - 256GB</a></li>
-                                        <li><a href="">SSD 480GB - 512GB</a></li>
-                                        <li><a href="">SSD 1TB - 2TB</a></li>
-                                        <li><a href="">SSD 2.5' SATA III</a></li>
-                                        <li><a href="">SSD M.2 2280</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        HDD
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">HDD Laptop</a></li>
-                                        <li><a href="">HDD PC</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Case Máy tính
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Case 1st Player</a></li>
-                                        <li><a href="">Case Asus</a></li>
-                                        <li><a href="">Case Antec</a></li>
-                                        <li><a href="">Case Cooler Master</a></li>
-                                        <li><a href="">Case Corsair</a></li>
-                                        <li><a href="">Case Deepcool</a></li>
-                                        <li><a href="">Case Gigabyte</a></li>
-                                        <li><a href="">Case MSI</a></li>
-                                        <li><a href="">Case Xigmatek</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Nguồn máy tính
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Nguồn Corsair</a></li>
-                                        <li><a href="">Nguồn Cooler Master</a></li>
-                                        <li><a href="">Nguồn Deepcool</a></li>
-                                        <li><a href="">Nguồn Gigabyte</a></li>
-                                        <li><a href="">Nguồn MSI</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Tản nhiệt CPU
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Tản nhiệt Cooler Master</a></li>
-                                        <li><a href="">Tản nhiệt Corsair</a></li>
-                                        <li><a href="">Tản nhiệt Deepcool</a></li>
-                                        <li><a href="">Tản nhiệt Gigabyte</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Quạt Case
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Quạt Cooler Master</a></li>
-                                        <li><a href="">Quạt Corsair</a></li>
-                                        <li><a href="">Quạt Deepcool</a></li>
-                                        <li><a href="">Quạt Xigmatek</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-header">
-                            <a href="">
-                                Gaming Gear
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li>
-                                    <a href="">
-                                        Bàn phím
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Bàn Phím Asus</a></li>
-                                        <li><a href="">Bàn Phím Akko</a></li>
-                                        <li><a href="">Bàn Phím Havit</a></li>
-                                        <li><a href="">Bàn Phím HyperX</a></li>
-                                        <li><a href="">Bàn Phím Logitech</a></li>
-                                        <li><a href="">Bàn Phím Razor</a></li>
-                                        <li><a href="">Bàn Phím Rapoo</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Chuột
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Chuột Asus</a></li>
-                                        <li><a href="">Chuột HyperX</a></li>
-                                        <li><a href="">Chuột Havit</a></li>
-                                        <li><a href="">Chuột Razer</a></li>
-                                        <li><a href="">Chuột Logitech</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Lót chuột
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Lót chuột Razer</a></li>
-                                        <li><a href="">Lót chuột HyperX</a></li>
-                                        <li><a href="">Lót chuột Havit</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Tai nghe
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Tai nghe Asus</a></li>
-                                        <li><a href="">Tai nghe Havit</a></li>
-                                        <li><a href="">Tai nghe HyperX</a></li>
-                                        <li><a href="">Tai nghe Logitech</a></li>
-                                        <li><a href="">Tai nghe Razer</a></li>
-                                        <li><a href="">Tai nghe Rapoo</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="">
-                                        Microphone
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Micro HyperX</a></li>
-                                        <li><a href="">Micro Razer</a></li>
-                                    </ul>
-                                </li>
-                                <li><a href="">Loa</a></li>
-                                <li><a href="">Webcam</a></li>
-                                <li><a href="">Tay cầm</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-header">
-                            <a href="">
-                                Phụ Kiện
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li><a href="">Balo-Túi đeo</a></li>
-                                <li><a href="">Thiết bị mạng</a></li>
-                                <li><a href="">Đế tản nhiệt Laptop</a></li>
-                                <li><a href="">Phụ kiện Razer</a></li>
-                                <li><a href="">Phụ kiện HyperX</a></li>
-                                <li><a href="">Phụ kiện PC</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-header">
-                            <a href="">
-                                Apple
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li><a href="">Imac</a></li>
-                                <li>
-                                    <a href="">
-                                        Macbook
-                                        <i class="btn-right ti-angle-right"></i>
-                                    </a>
-                                    <ul class="sub-subnav">
-                                        <li><a href="">Macbook Pro</a></li>
-                                        <li><a href="">Macbook Air</a></li>
-                                        <li><a href="">Cổng chuyển Macbook</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-header">
-                            <a href="">
-                                Xgear Corner
-                                <i class="btn-down ti-angle-down"></i>
-                            </a>
-                            <ul class="subnav">
-                                <li><a href="">Bàn</a></li>
-                                <li><a href="">Ghế</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
             </div>
+
+            <div id="nav">
+                <ul>
+                    <li class="nav-header">
+                        <a href="">
+                            Laptop
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li>
+                                <a href="">
+                                    Laptop Acer
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Aspire 7</a></li>
+                                    <li><a href="">Nitro 5</a></li>
+                                    <li><a href="">Helios</a></li>
+                                    <li><a href="">Triton</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Laptop Asus
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Laptop Asus văn phòng - đồ họa</a></li>
+                                    <li><a href="">TUF Series</a></li>
+                                    <li>
+                                        <a href="">
+                                            ROG Series
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">Strix</a></li>
+                                            <li><a href="">Zephyrus</a></li>
+                                            <li><a href="">Flow</a></li>
+                                            <li><a href="">Scar</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Laptop Lenovo
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Lenovo Văn phòng - Đồ họa</a></li>
+                                    <li><a href="">Ideapad Gaming</a></li>
+                                    <li><a href="">Legion Gaming</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Laptop MSI
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">MSI văn phòng - Đồ hoạ</a></li>
+                                    <li>
+                                        <a href="">
+                                            Gaming AMD Series
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">Bravo</a></li>
+                                            <li><a href="">Alpha</a></li>
+                                            <li><a href="">Delta</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Gaming Intel Series
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">GF</a></li>
+                                            <li><a href="">GL</a></li>
+                                            <li><a href="">GP</a></li>
+                                            <li><a href="">GE</a></li>
+                                            <li><a href="">GS</a></li>
+                                            <li><a href="">GT</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="">Laptop HP</a></li>
+                            <li>
+                                <a href="">
+                                    Laptop Dell
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Dell Văn phòng</a></li>
+                                    <li><a href="">Dell Gaming -Đồ họa</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="">
+                            XGEAR PC
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li>
+                                <a href="">
+                                    Xgear PC
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav1">
+                                    <li><a href="">PC Gaming</a></li>
+                                    <li><a href="">PC Đồ Họa</a></li>
+                                    <li><a href="">PC Văn Phòng</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Mini PC</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="">
+                            Màn hình
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li>
+                                <a href="">
+                                    Màn hình theo hãng
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav1">
+                                    <li><a href="">Màn Hình Asus</a></li>
+                                    <li><a href="">Màn Hình Acer</a></li>
+                                    <li><a href="">Màn Hình Gigabyte</a></li>
+                                    <li><a href="">Màn Hình MSI</a></li>
+                                    <li><a href="">Màn Hình Dell</a></li>
+                                    <li><a href="">Màn Hình Phillips</a></li>
+                                    <li><a href="">Màn Hình Samsung</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Màn hình Gaming</a></li>
+                            <li><a href="">Màn hình đồ họa</a></li>
+                        </ul>
+
+                    </li>
+
+                    <li class="nav-header">
+                        <a href="">
+                            Linh Kiện
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li>
+                                <a href="">
+                                    CPU
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">CPU AMD</a></li>
+                                    <li><a href="">CPU Intel</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Mainboard
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li>
+                                        <a href="">
+                                            Main Asus
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">Mainboard Asus Intel</a></li>
+                                            <li><a href="">Mainboard Asus AMD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Main Gigabyte
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">Mainboard Gigabyte Intel</a></li>
+                                            <li><a href="">Mainboard Gigabyte AMD</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            Main MSI
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">Mainboard MSI Intel</a></li>
+                                            <li><a href="">Mainboard MSI AMD</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    RAM
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li>
+                                        <a href="">
+                                            RAM PC
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">RAM TeamGroup</a></li>
+                                            <li><a href="">RAM Corsair</a></li>
+                                            <li><a href="">RAM Kingston</a></li>
+                                            <li><a href="">RAM Gigabyte</a></li>
+                                            <li><a href="">RAM GSkill</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="">Ram Laptop</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    VGA
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li>
+                                        <a href="">
+                                            VGA Asus
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">VGA Asus RTX 4000</a></li>
+                                            <li><a href="">VGA Asus GTX</a></li>
+                                            <li><a href="">VGA Asus RTX 2060</a></li>
+                                            <li><a href="">VGA Asus RTX 3060 - 3060Ti</a></li>
+                                            <li><a href="">VGA Asus RTX 3070 - 3070Ti</a></li>
+                                            <li><a href="">VGA Asus RTX 3080 - 3080Ti</a></li>
+                                            <li><a href="">VGA Asus RTX 3090 - 3090Ti</a></li>
+                                            <li><a href="">VGA Asus Radeon RX</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            VGA Gigabyte
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">VGA Gigabyte RTX 4000</a></li>
+                                            <li><a href="">VGA Gigabyte GTX</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 2060</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 3060 - 3060Ti</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 3070 - 3070Ti</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 3080 - 3080Ti</a></li>
+                                            <li><a href="">VGA Gigabyte RTX 3090 - 3090Ti</a></li>
+                                            <li><a href="">VGA Gigabyte AMD Radeon</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="">
+                                            VGA MSI
+                                            <i class="btn-right ti-angle-right"></i>
+                                        </a>
+                                        <ul class="sub-subnav1">
+                                            <li><a href="">VGA MSI RTX 4000</a></li>
+                                            <li><a href="">VGA MSI GTX</a></li>
+                                            <li><a href="">VGA MSI RTX 2060</a></li>
+                                            <li><a href="">VGA MSI RTX 3060 - 3060Ti</a></li>
+                                            <li><a href="">VGA MSI RTX 3070 - 3070Ti</a></li>
+                                            <li><a href="">VGA MSI RTX 3080 - 3080Ti</a></li>
+                                            <li><a href="">VGA MSI RTX 3090 - 3090Ti</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    SSD
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">SSD 120GB - 128GB</a></li>
+                                    <li><a href="">SSD 240GB - 256GB</a></li>
+                                    <li><a href="">SSD 480GB - 512GB</a></li>
+                                    <li><a href="">SSD 1TB - 2TB</a></li>
+                                    <li><a href="">SSD 2.5' SATA III</a></li>
+                                    <li><a href="">SSD M.2 2280</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    HDD
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">HDD Laptop</a></li>
+                                    <li><a href="">HDD PC</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Case Máy tính
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Case 1st Player</a></li>
+                                    <li><a href="">Case Asus</a></li>
+                                    <li><a href="">Case Antec</a></li>
+                                    <li><a href="">Case Cooler Master</a></li>
+                                    <li><a href="">Case Corsair</a></li>
+                                    <li><a href="">Case Deepcool</a></li>
+                                    <li><a href="">Case Gigabyte</a></li>
+                                    <li><a href="">Case MSI</a></li>
+                                    <li><a href="">Case Xigmatek</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Nguồn máy tính
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Nguồn Corsair</a></li>
+                                    <li><a href="">Nguồn Cooler Master</a></li>
+                                    <li><a href="">Nguồn Deepcool</a></li>
+                                    <li><a href="">Nguồn Gigabyte</a></li>
+                                    <li><a href="">Nguồn MSI</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Tản nhiệt CPU
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Tản nhiệt Cooler Master</a></li>
+                                    <li><a href="">Tản nhiệt Corsair</a></li>
+                                    <li><a href="">Tản nhiệt Deepcool</a></li>
+                                    <li><a href="">Tản nhiệt Gigabyte</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Quạt Case
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Quạt Cooler Master</a></li>
+                                    <li><a href="">Quạt Corsair</a></li>
+                                    <li><a href="">Quạt Deepcool</a></li>
+                                    <li><a href="">Quạt Xigmatek</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="">
+                            Gaming Gear
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li>
+                                <a href="">
+                                    Bàn phím
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Bàn Phím Asus</a></li>
+                                    <li><a href="">Bàn Phím Akko</a></li>
+                                    <li><a href="">Bàn Phím Havit</a></li>
+                                    <li><a href="">Bàn Phím HyperX</a></li>
+                                    <li><a href="">Bàn Phím Logitech</a></li>
+                                    <li><a href="">Bàn Phím Razor</a></li>
+                                    <li><a href="">Bàn Phím Rapoo</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Chuột
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Chuột Asus</a></li>
+                                    <li><a href="">Chuột HyperX</a></li>
+                                    <li><a href="">Chuột Havit</a></li>
+                                    <li><a href="">Chuột Razer</a></li>
+                                    <li><a href="">Chuột Logitech</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Lót chuột
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Lót chuột Razer</a></li>
+                                    <li><a href="">Lót chuột HyperX</a></li>
+                                    <li><a href="">Lót chuột Havit</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Tai nghe
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Tai nghe Asus</a></li>
+                                    <li><a href="">Tai nghe Havit</a></li>
+                                    <li><a href="">Tai nghe HyperX</a></li>
+                                    <li><a href="">Tai nghe Logitech</a></li>
+                                    <li><a href="">Tai nghe Razer</a></li>
+                                    <li><a href="">Tai nghe Rapoo</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="">
+                                    Microphone
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Micro HyperX</a></li>
+                                    <li><a href="">Micro Razer</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="">Loa</a></li>
+                            <li><a href="">Webcam</a></li>
+                            <li><a href="">Tay cầm</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="">
+                            Phụ Kiện
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li><a href="">Balo-Túi đeo</a></li>
+                            <li><a href="">Thiết bị mạng</a></li>
+                            <li><a href="">Đế tản nhiệt Laptop</a></li>
+                            <li><a href="">Phụ kiện Razer</a></li>
+                            <li><a href="">Phụ kiện HyperX</a></li>
+                            <li><a href="">Phụ kiện PC</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="">
+                            Apple
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li><a href="">Imac</a></li>
+                            <li>
+                                <a href="">
+                                    Macbook
+                                    <i class="btn-right ti-angle-right"></i>
+                                </a>
+                                <ul class="sub-subnav">
+                                    <li><a href="">Macbook Pro</a></li>
+                                    <li><a href="">Macbook Air</a></li>
+                                    <li><a href="">Cổng chuyển Macbook</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-header">
+                        <a href="">
+                            Xgear Corner
+                            <i class="btn-down ti-angle-down"></i>
+                        </a>
+                        <ul class="subnav">
+                            <li><a href="">Bàn</a></li>
+                            <li><a href="">Ghế</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
         <div id="content">
             @RenderBody();
         </div>
@@ -626,32 +628,34 @@
         showDivs(slideIndex);
 
         function plusDivs(n) {
-          showDivs(slideIndex += n);
+            showDivs(slideIndex += n);
         }
 
         function currentDiv(n) {
-          showDivs(slideIndex = n);
+            showDivs(slideIndex = n);
         }
 
         function showDivs(n) {
-          var i;
-          var x = document.getElementsByClassName("img-slide");
-          var dots = document.getElementsByClassName("demo");
-          if (n > x.length) {slideIndex = 1}
-          if (n < 1) {slideIndex = x.length}
-          for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
-          }
-          for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" xgear-black", "");
-          }
-          x[slideIndex-1].style.display = "block";
-          dots[slideIndex-1].className += " xgear-black";
+            var i;
+            var x = document.getElementsByClassName("img-slide");
+            var dots = document.getElementsByClassName("demo");
+            if (n > x.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = x.length }
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" xgear-black", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " xgear-black";
         }
 
-        
-    </script>
 
+    </script>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
 </body>
 </html>
 

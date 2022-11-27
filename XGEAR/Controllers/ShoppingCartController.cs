@@ -49,14 +49,14 @@ namespace XGEAR.Controllers
 
         public ActionResult Update_Cart_Quantity(FormCollection form)
         {
-            
+
             Cart cart = Session["Cart"] as Cart;
             int id_pro = int.Parse(form["idPro"]);
             int _quantity = int.Parse(form["cartQuantity"]);
-            if(_quantity < 0)
+            if (_quantity < 0)
                 return RedirectToAction("ShowCart", "ShoppingCart");
             else
-            cart.Update_quantity(id_pro, _quantity);
+                cart.Update_quantity(id_pro, _quantity);
             return RedirectToAction("ShowCart", "ShoppingCart");
         }
 
