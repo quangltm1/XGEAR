@@ -132,6 +132,25 @@ namespace XGEAR.Controllers
             return View(pro.Single());
         }
 
+        public ActionResult Laptop()
+        {
+            
+                return View(database.Products.ToList());
+            
+        }
+
+        public ActionResult PC()
+        {
+            
+                return View(database.Products.ToList());
+            
+        }
         
+        public ActionResult Manhinh()
+        {
+            
+               return View(database.Products.ToList());
+            
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace XGEAR.Models
     using System.Web;
     using System.Configuration;
     using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Product
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]

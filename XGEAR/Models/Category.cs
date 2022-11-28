@@ -30,7 +30,7 @@ namespace XGEAR.Models
         [Required(ErrorMessage = "Name not empty...")]
         [StringLength(50, MinimumLength = 5)]
         public string NameCate { get; set; }
-        
+    
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Product> Products { get; set; }
         [NotMapped]

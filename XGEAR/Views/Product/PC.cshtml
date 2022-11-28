@@ -1,0 +1,30 @@
+﻿@model IEnumerable<XGEAR.Models.Product>
+
+@{
+    ViewBag.Title = "PC";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>PC</h2>
+@foreach (var pro in Model.Where(s=>s.ProductID==5))
+{
+
+
+
+        <div class="">
+            <div class="thumbnail">
+                <a href="@Url.Action("Details", "Product", new { id = pro.ProductID })">
+                <img src="@Url.Content(pro.ImagePro)" alt="Lights" style="width:100%">
+                <div class="caption">
+                    <p>@pro.NamePro</p>
+                    <p>@pro.Price</p>
+                    <p>
+
+                        <a href="@Url.Action("AddToCart", "Cart", new { id = pro.ProductID })" class="btn btn-default" role="button">Add to cart</a>
+                    </p>
+                </div>
+                    </a>
+            </div>
+        </div>
+
+}
